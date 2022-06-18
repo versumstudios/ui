@@ -1,0 +1,108 @@
+{
+  "name": "@versumstudios/ui",
+  "description": "Versum Studios UI",
+  "version": "0.1.0",
+  "author": "versumstudios",
+  "license": "ISC",
+  "keywords": [
+    "versum",
+    "tezos",
+    "design system",
+    "ui",
+    "stitches.js",
+    "radix-ui"
+  ],
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
+  "files": [
+    "dist"
+  ],
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "storybook": "start-storybook -p 6006",
+    "storybook:build": "build-storybook",
+    "prettier": "prettier --write .",
+    "eslint": "eslint \"**/*.{ts,tsx}\" --fix",
+    "test": "echo \"Error: no test specified\" && exit 0",
+    "ui:build": "rollup -c",
+    "ui:release": "yarn ui:build && np",
+    "build-storybook": "build-storybook"
+  },
+  "peerDependencies": {
+    "react": "17.0.1",
+    "react-dom": "17.0.1"
+  },
+  "dependencies": {
+    "@radix-ui/react-accordion": "^0.1.6",
+    "@radix-ui/react-alert-dialog": "^0.1.7",
+    "@radix-ui/react-checkbox": "^0.1.5",
+    "@radix-ui/react-dialog": "^0.1.7",
+    "@radix-ui/react-label": "^0.1.5",
+    "@radix-ui/react-radio-group": "^0.1.5",
+    "@radix-ui/react-slider": "^0.1.4",
+    "@radix-ui/react-tooltip": "^0.1.7",
+    "@stitches/react": "^1.2.8",
+    "@types/lodash": "^4.14.182",
+    "lodash.uniqueid": "^4.0.1",
+    "next": "12.1.6",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "rollup-plugin-typescript2": "^0.32.1",
+    "typescript": "^4.7.4"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "**/*.{js,jsx,ts,tsx}": [
+      "prettier --write"
+    ]
+  },
+  "devDependencies": {
+    "@babel/core": "^7.18.5",
+    "@storybook/addon-actions": "^6.5.9",
+    "@storybook/addon-essentials": "^6.5.9",
+    "@storybook/addon-interactions": "^6.5.9",
+    "@storybook/addon-links": "^6.5.9",
+    "@storybook/builder-webpack5": "^6.5.9",
+    "@storybook/manager-webpack5": "^6.5.9",
+    "@storybook/react": "^6.5.9",
+    "@storybook/testing-library": "^0.0.13",
+    "@storybook/theming": "^6.5.9",
+    "@types/node": "18.0.0",
+    "@types/react": "^18.0.14",
+    "@types/react-dom": "18.0.5",
+    "@typescript-eslint/eslint-plugin": "^5.28.0",
+    "@typescript-eslint/parser": "^5.28.0",
+    "babel-loader": "^8.2.5",
+    "eslint": "8.18.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-next": "^12.1.6",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-import-resolver-typescript": "^2.7.1",
+    "eslint-plugin-autofix": "^1.1.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.29.4",
+    "eslint-plugin-react-hooks": "^4.5.0",
+    "eslint-plugin-simple-import-sort": "^7.0.0",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.2",
+    "np": "^7.6.1",
+    "prettier": "^2.7.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "rollup": "^2.75.6",
+    "storybook-dark-mode": "^1.1.0"
+  }
+}
