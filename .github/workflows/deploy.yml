@@ -1,49 +1,26 @@
-name: 'UI Tests'
+# .github/workflows/chromatic.yml
 
+# Workflow name
+name: 'Deploy Storybook'
+
+# Event for the workflow
 on: push
 
+# List of jobs
 jobs:
-  # Run interaction and accessibility tests
-  interaction-and-accessibility:
+  chromatic-deployment:
+    # Operating System
     runs-on: ubuntu-latest
+    # Job steps
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
-        with:
-          node-version: '14.x'
+      - uses: actions/checkout@v1
       - name: Install dependencies
         run: yarn
-      - name: Install Playwright
-        run: npx playwright install --with-deps
-      - name: Build Storybook
-        run: yarn build-storybook --quiet
-      - name: Serve Storybook and run tests
-        run: |
-          npx concurrently -k -s first -n "SB,TEST" -c "magenta,blue" \
-            "npx http-server storybook-static --port 6006 --silent" \
-            "npx wait-on tcp:6006 && yarn test-storybook"
-  # Run visual and composition tests with Chromatic
-  visual-and-composition:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-        with:
-          fetch-depth: 0 # Required to retrieve git history
-      - name: Install dependencies
-        run: yarn
+        # 👇 Adds Chromatic as a step in the workflow
       - name: Publish to Chromatic
         uses: chromaui/action@v1
+        # Chromatic GitHub Action options
         with:
-          # Grab this from the Chromatic manage page
+          token: ${{ secrets.GITHUB_TOKEN }}
+          # 👇 Chromatic projectToken, refer to the manage page to obtain it.
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
-  # Run user flow tests with Cypress
-  user-flow:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: Install dependencies
-        run: yarn
-      - name: Cypress run
-        uses: cypress-io/github-action@v2
-        with:
-          start: npm start
