@@ -12,7 +12,7 @@ export const decorators = [
 ];
 
 export const parameters = {
-  chromatic: { disable: true },
+  // chromatic: { disable: true },
   darkMode: {
     dark: { ...themes.dark },
     light: { ...themes.normal },
