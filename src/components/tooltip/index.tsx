@@ -4,7 +4,7 @@ import * as RadixTooltip from '@radix-ui/react-tooltip';
 
 import * as Styles from './styles';
 
-interface ITooltip {
+export interface ITooltip {
   children: ReactNode;
   description: string;
 }
