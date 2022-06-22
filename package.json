@@ -102,7 +102,5 @@
     "react-dom": "^18.2.0",
     "rollup": "^2.75.6",
     "storybook-dark-mode": "^1.1.0"
-  },
-  "readme": "ERROR: No README data found!",
-  "_id": "@versumstudios/ui@0.1.0"
+  }
 }
