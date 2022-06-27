@@ -44,11 +44,11 @@ export const Content = styled('div', {
   padding: '$space$4',
 
   '&[data-state="open"]': {
-    animation: `${slideDown} 200ms ease-out`,
+    animation: `${slideDown} 200ms linear`,
   },
 
   '&[data-state="closed"]': {
-    animation: `${slideUp} 200ms ease-out`,
+    animation: `${slideUp} 200ms linear`,
   },
 });
 
@@ -58,7 +58,7 @@ export const Chevron = styled('div', {
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
-  transition: 'transform 200ms ease-out',
+  transition: 'transform 200ms linear',
 
   i: {
     color: '$secondaryFill',

@@ -8,7 +8,7 @@ export default {
   args: {
     address: 'tzkt1',
     value: 100,
-    editable: false,
+    editable: true,
     isPercentage: false,
   },
   argTypes: {
