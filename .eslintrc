@@ -7,8 +7,6 @@
   },
   "extends": [
     "airbnb",
-    "next",
-    "next/core-web-vitals",
     "plugin:@typescript-eslint/recommended",
     "plugin:import/errors",
     "plugin:import/typescript",

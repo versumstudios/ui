@@ -16,5 +16,5 @@
     "target": "es5"
   },
   "exclude": ["node_modules", "coverage", "dist", "storybook-static"],
-  "include": ["next-env.d.ts", "src/**/*", "src/types/**/*.ts"],
+  "include": ["src/**/*", "src/types/**/*.ts"],
 }
