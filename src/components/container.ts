@@ -9,8 +9,6 @@ export const Container = styled('div', {
 
   '@bp2': {
     padding: '0 $space$2',
-    maxWidth: 1440,
-    margin: '0 auto',
   },
 
   variants: {
