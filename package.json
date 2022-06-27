@@ -26,8 +26,8 @@
     "prettier": "prettier --write .",
     "eslint": "eslint \"**/*.{ts,tsx}\" --fix",
     "test": "echo \"Error: no test specified\" && exit 0",
-    "ui:build": "rollup -c",
-    "ui:release": "yarn ui:build && np",
+    "module:build": "rollup -c",
+    "module:release": "yarn ui:build && np",
     "build-storybook": "build-storybook"
   },
   "dependencies": {

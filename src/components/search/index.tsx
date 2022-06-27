@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { ChangeEvent, forwardRef, useState } from 'react';
-import _uniqueId from 'lodash/uniqueId';
+import { uniqueId } from 'lodash';
 
 import { Box } from '../box';
 import { Step } from '../step';
@@ -35,7 +35,7 @@ export const Search = forwardRef<HTMLInputElement, ISearch>(
     },
     ref
   ) => {
-    const [internalUID] = useState(_uniqueId('vsearch-'));
+    const [internalUID] = useState(uniqueId('vsearch-'));
 
     return (
       <Styles.Container disabled={disabled} subtle={subtle}>

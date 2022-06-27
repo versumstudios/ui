@@ -1,5 +1,5 @@
 import React, { ChangeEvent, forwardRef, useState } from 'react';
-import _uniqueId from 'lodash/uniqueId';
+import { uniqueId } from 'lodash';
 
 import { CSS } from '@stitches/react';
 
@@ -38,7 +38,7 @@ export const Input = forwardRef<HTMLInputElement, IInput>(
     },
     ref
   ) => {
-    const [internalUID] = useState(_uniqueId('vinput-'));
+    const [internalUID] = useState(uniqueId('vinput-'));
     return (
       <Styles.Container small={small} disabled={disabled}>
         {label && <Styles.Label htmlFor={internalUID}>{label}</Styles.Label>}

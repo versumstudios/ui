@@ -1,5 +1,5 @@
 import React, { FC, ReactNode, useState } from 'react';
-import _uniqueId from 'lodash/uniqueId';
+import { uniqueId } from 'lodash';
 
 import { Tooltip } from '../tooltip';
 
@@ -14,7 +14,7 @@ export interface IField {
 }
 
 export const Field: FC<IField> = ({ uid, label, tooltip, children, error }) => {
-  const [internalUID] = useState(_uniqueId('vfield-'));
+  const [internalUID] = useState(uniqueId('vfield-'));
   return (
     <Styles.Container id={uid}>
       {label && (
