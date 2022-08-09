@@ -42,7 +42,7 @@ export const AlertDialog: FC<IAlertDialog> = ({
   warning = false,
 }) => {
   return (
-    <AlertDialogPrimitive.Root open={open} onOpenChange={onOpenChange} allowPinchZoom>
+    <AlertDialogPrimitive.Root open={open} onOpenChange={onOpenChange}>
       {trigger && <AlertDialogPrimitive.Trigger asChild>{trigger}</AlertDialogPrimitive.Trigger>}
 
       <AlertDialogPrimitive.Overlay asChild>

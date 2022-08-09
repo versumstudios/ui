@@ -30,7 +30,7 @@ export const Dialog: FC<IDialog> = ({
   onCancel,
 }) => {
   return (
-    <DialogPrimitive.Root open={open} onOpenChange={onOpenChange} allowPinchZoom>
+    <DialogPrimitive.Root open={open} onOpenChange={onOpenChange}>
       {trigger && <DialogPrimitive.Trigger asChild>{trigger}</DialogPrimitive.Trigger>}
 
       <DialogPrimitive.Overlay asChild>
