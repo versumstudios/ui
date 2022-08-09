@@ -11,9 +11,11 @@ export interface ITooltip {
 
 export const Tooltip: FC<ITooltip> = ({ children, description }) => {
   return (
-    <RadixTooltip.Root delayDuration={0}>
-      <Styles.TooltipTrigger tabIndex={-1}>{children}</Styles.TooltipTrigger>
-      <Styles.TooltipContent sideOffset={8}>{description}</Styles.TooltipContent>
-    </RadixTooltip.Root>
+    <RadixTooltip.Provider>
+      <RadixTooltip.Root delayDuration={0}>
+        <Styles.TooltipTrigger tabIndex={-1}>{children}</Styles.TooltipTrigger>
+        <Styles.TooltipContent sideOffset={8}>{description}</Styles.TooltipContent>
+      </RadixTooltip.Root>
+    </RadixTooltip.Provider>
   );
 };

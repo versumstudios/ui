@@ -1,5 +1,7 @@
 import { Meta, Story } from '@storybook/react';
 
+import { Box } from '../box';
+
 import { ITooltip, Tooltip } from './index';
 
 export default {
@@ -10,4 +12,8 @@ export default {
   },
 } as Meta;
 
-export const Interactive: Story<ITooltip> = (props) => <Tooltip {...props}>Tooltip</Tooltip>;
+export const Interactive: Story<ITooltip> = (props) => (
+  <Tooltip {...props}>
+    <Box css={{ color: '$primaryFill' }}>Tooltip</Box>
+  </Tooltip>
+);
