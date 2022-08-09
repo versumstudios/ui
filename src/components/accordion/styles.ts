@@ -58,7 +58,7 @@ export const Chevron = styled('div', {
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
-  transition: 'transform 200ms linear',
+  transition: 'transform 200ms',
 
   i: {
     color: '$secondaryFill',
